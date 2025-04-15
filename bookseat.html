@@ -1,68 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bookseat</title>
-    <style>
-        body{
-            margin-top: 150px;
-            /* border: 5px solid rgb(249, 246, 246); */
-            display: flex;
-            justify-content: center;
-            border-radius: 10px;
-            margin-left: 700px;
-            margin-right: 1300px;
-            background-color: aliceblue;
-            background-image: url(/image/bookingbackground.jpg);
-             background-repeat: no-repeat;
-             background-size: 100% 200%;
-             /* color: white; */
-        }
-        h1{
-            text-shadow: 1px 1px 2px black, 0 0 25px rgb(102, 98, 206), 0 0 25px rgb(240, 240, 244);
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            
-            font-size: 300%;
-        }
-        h2{
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            color: white;
-            font-size: 200%;
-            
-        }
-        h3{
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            font-size: 500%;
-            font-weight: 2000;
-        }
-        .login-btn {
-             width: 100%;
-             padding: 10px;
-             background: rgb(45, 62, 129);
-             border: none;
-             border-radius: 50px;
-             color: black;
-             font-size: 60px;
-             
-             text-shadow: 1px 1px 2px black, 0 0 25px rgb(69, 66, 144), 0 0 25px rgb(240, 240, 244);
-         }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Seat</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background-image: url('image/bookingbackground.jpg');
+      background-size: cover;
+      background-position: center;
+      display: grid;
+      place-items: center;
+      font-family: 'Segoe UI', sans-serif;
+      color:#000;
+    }
+
+    form {
+      background-color:indianred;
+      padding: 2rem;
+      border-radius: 20px;
+      display: grid;
+      gap: 3.5rem;
+      max-width: 600px;
+      width: 90%;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    label {
+      font-size: 1.2rem;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input[type="text"],
+    input[type="date"] {
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      width: 100%;
+      font-size: 1rem;
+      margin-top: 5px;
+    }
+
+    .submit-btn {
+      padding: 15px;
+      background: #e1f5fe;
+      border: none;
+      border-radius: 50px;
+      color: #1565c0;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background: #b3e5fc;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      label, input { font-size: 1rem; }
+    }
+  </style>
 </head>
 <body>
-    <form>
-    <h1>Ticket Booking</h1><br><br>
-    <h2>&#11177 The Price of row A to C is 100 , row D to F is 130 , row G to I is 150.</h2>
-    
-    <h2>Give me your suitable date for booking: <input type="text" id="Date" name="Date" value="" required></h2>
-    <h2>Give me your confortable seat for booking: <input type="text" id="seat" name="seat" value="" required></h2><br><br><br><br><br>
-    <button type="Confirm Booking" class="login-btn"><a href="confirmation.html">Confirm Booking</button></a><br><br><br><br><br><br><br>
-    </form>
+  <form action="confirmation.html" method="GET">
+    <h1>🎟️ Ticket Booking</h1>
+
+    <div>
+      <label>Price Info:</label>
+      <p>A–C = ₹100, D–F = ₹130, G–I = ₹150</p>
+    </div>
+
+    <div>
+      <label for="date">Booking Date:</label>
+      <input type="date" id="date" name="date" required />
+    </div>
+
+    <div>
+      <label for="seat">Preferred Seat:</label>
+      <input type="text" id="seat" name="seat" placeholder="E.g. B4, G7" required />
+    </div>
+
+    <button type="submit" class="submit-btn">Confirm Booking</button>
+  </form>
 </body>
 </html>
