@@ -1,0 +1,111 @@
+
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Seat</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      max-height: 60vh;
+      background-image: url('/image/bookingbackground.jpg');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-size: cover;
+      background-position: center;
+      display: grid;
+      margin-left: 800px;
+      margin-top: 10px;
+      /* place-items: center; */
+      font-family: 'Segoe UI', sans-serif;
+      color:#000;
+    }
+
+    form {
+      background-color:#366298;;
+      padding: 2rem;
+      border-radius: 20px;
+      display: grid;
+      gap: 3.5rem;
+      max-width: 600px;
+      width: 90%;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    label {
+      font-size: 1.2rem;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input[type="text"],
+    input[type="date"] {
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      width: 100%;
+      font-size: 1rem;
+      margin-top: 5px;
+    }
+
+    .submit-btn {
+      padding: 15px;
+      background: #e1f5fe;
+      border: none;
+      border-radius: 50px;
+      color: #08090a;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background: #475fda;
+    }
+    @media (max-width: 1200px) {
+      body {
+        margin-left: 0;
+        justify-content: center;
+        padding: 20px;
+      }
+  </style>
+ </head>
+ <body>
+
+  <form action="confirmation.html" method="GET">
+    <h1>🎟️ Ticket Booking</h1>
+
+    <div>
+      <label>Price Info:</label>
+      <p>A–C = ₹100, D–F = ₹130, G–I = ₹150</p>
+    </div>
+
+    <div>
+      <label for="date">Booking Date:</label>
+      <input type="date" id="date" name="date" required />
+    </div>
+
+    <div>
+      <label for="seat">Preferred Seat:</label>
+      <input type="text" id="seat" name="seat" placeholder="E.g. B4, G7" required />
+    </div>
+
+    <button type="submit" class="submit-btn">Confirm Booking</button>
+  </form>
+ </body>
+</html> 
